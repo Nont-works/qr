@@ -14,9 +14,9 @@
         }
 
         :root {
-            --bg-color: #0f1410; /* Dark Museum Theme */
+            --bg-color: #0f1410;
             --card-bg: #1a221b;
-            --primary-accent: #c4a468; /* Ancient Gold */
+            --primary-accent: #c4a468;
             --text-main: #e6e8e5;
             --text-muted: #a3ab9e;
             --header-bg: #0a0d0a;
@@ -33,11 +33,10 @@
             padding: 0;
         }
 
-        /* Hero Header with Background Image */
         header {
             position: relative;
             background: linear-gradient(180deg, rgba(15,20,16,0.6) 0%, rgba(15,20,16,1) 100%),
-            url('image/chedi-overview-full.jpg') center/cover no-repeat;
+            url('image/LINE_ALBUM_ป้าย%201_260814_2.jpg') center/cover no-repeat;
             padding: 120px 20px 60px;
             text-align: center;
             border-bottom: 2px solid var(--primary-accent);
@@ -50,6 +49,7 @@
             color: #fff;
             text-shadow: 0 4px 15px rgba(0,0,0,0.8);
             letter-spacing: 2px;
+            text-align: center;
         }
 
         header p {
@@ -61,9 +61,10 @@
             font-size: 1.25em;
             font-weight: 500;
             letter-spacing: 1px;
+            display: block;
+            width: 100%;
         }
 
-        /* Floating Language Switcher with Glassmorphism Effect */
         .lang-switch {
             position: absolute;
             top: 20px;
@@ -106,7 +107,33 @@
             margin-bottom: 50px;
         }
 
-        /* Badge Style Section Title */
+        .history-timeline {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .history-timeline ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .history-timeline li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: #d1d6ce;
+        }
+        .history-timeline li::before {
+            content: '•';
+            color: var(--primary-accent);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
         .section-badge {
             display: flex;
             align-items: center;
@@ -123,7 +150,6 @@
             background: linear-gradient(90deg, var(--primary-accent), transparent);
         }
 
-        /* Timeline Cards for Structural Details */
         .structure-timeline {
             display: flex;
             flex-direction: column;
@@ -148,7 +174,6 @@
             font-size: 1.25em;
         }
 
-        /* Image Grid Modern Cards */
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -184,7 +209,7 @@
         }
 
         .img-card:hover img {
-            transform: scale(1.08); /* Zoom effect */
+            transform: scale(1.08);
         }
 
         .img-card .caption {
@@ -194,7 +219,6 @@
             color: var(--text-muted);
         }
 
-        /* Lightbox Modal */
         .lightbox {
             display: none;
             position: fixed;
@@ -250,84 +274,195 @@
     <!-- Intro -->
     <div class="intro-text">
         <p style="text-indent: 0; margin-top: 0;">The ancient monument of Wat San Nhong stands on the southern edge of "Thung Chedi" (Chedi Field), an area within the old city of Hot, in Hot Sub-district, Hot District, Chiang Mai Province. The chedi faces east toward the Ping River. No definitive record of the construction survives, but its artistic style and archaeological evidence place it within roughly the 15th to 17th centuries CE.</p>
-        <p style="text-indent: 0; margin-bottom: 0;">Chedi Wat San Nhong is a bell-shaped chedi in the Lanna art style, set on a square plan measuring 10.2 by 10.2 metres. It stands on a base raised about 30 centimetres above ground level, which joins the vihara and the principal chedi onto a single shared platform, forming a circumambulatory terrace (Pradakshina platform). On the western side, this base extends to meet the temple's boundary wall.</p>
     </div>
 
-    <!-- Structure Timeline -->
+    <!-- Historical Work Timeline -->
+    <div class="section-badge">Past Operations & Excavation</div>
+    <div class="history-timeline">
+        <ul>
+            <li><strong>1960 CE (B.E. 2503):</strong> Archaeological excavation and site clearance in dam-affected zones by the Fine Arts Department.</li>
+            <li><strong>1968 CE (B.E. 2511):</strong> Archaeological survey of the Hot City area by the 7th Regional Office of Fine Arts, Chiang Mai, and Silpakorn University.</li>
+            <li><strong>1990 CE (B.E. 2533):</strong> Archaeological excavation and clearance project at Wat San Nhong (abandoned site) by the 7th Regional Office of Fine Arts, Chiang Mai.</li>
+            <li><strong>2021-2026 CE (B.E. 2564-2569):</strong> Conservation and development project of Chedi Wat San Nhong by the 7th Regional Office of Fine Arts, Chiang Mai.</li>
+        </ul>
+    </div>
+
+    <!-- Structural Elements -->
     <div class="section-badge">Structural Elements</div>
+    <p style="color: #c4c8c2;">Chedi Wat San Nhong is a bell-shaped chedi in the Lanna art style, set on a square plan measuring 10.2 by 10.2 metres. It stands on a raised platform with brick paving forming a circumambulatory terrace (Pradakshina platform), with access stairs on the southeastern corner.</p>
 
     <div class="structure-timeline">
         <div class="timeline-card">
-            <h3>1. The Base</h3>
-            <p style="text-indent: 0; margin: 0;">The lowest tier is a stepped plinth (Than Khiang) on a square plan, with lotus-bud pillars (Sao Hua Bua) decorating each corner. On every side of the plinth stand altar platforms formed of lotus-moulded bases adorned with bead-and-reel moulding. The eastern altar platform is the largest and stands apart from the plinth, distinct from the other three sides. It displays finely detailed stucco work in both floral motifs and animal figures, including peacocks, elephants, Singhas (lions), and Qilins (mythical hybrid creatures). Above this rise indented-corner plinths, stacked in three receding tiers.</p>
+            <h3>The Base</h3>
+            <p style="text-indent: 0; margin: 0;">The lowest tier is an indented-corner square plinth, adorned with altar platforms on all sides and lotus-bud corner pillars, supporting three receding tiers of indented-corner plinths.</p>
         </div>
         <div class="timeline-card">
-            <h3>2. The Body (Relic Chamber)</h3>
-            <p style="text-indent: 0; margin: 0;">Set on an indented-corner square plan 6.5 metres wide, decorated with bead-and-reel moulding and stucco ornament in the form of framed niches with cloud-like scrollwork.</p>
+            <h3>The Body (Relic Chamber)</h3>
+            <p style="text-indent: 0; margin: 0;">A large relic chamber on an indented-corner square plan measuring 6.4 metres in width, decorated with bead-and-reel moulding and stucco frames with cloud-like scrollwork in the indented niches.</p>
         </div>
         <div class="timeline-card">
-            <h3>3. The Upper Part</h3>
-            <p style="text-indent: 0; margin: 0;">Consists of circular-plan stepped plinths in three receding tiers, supporting the bell-shaped body and a square-plan throne. The uppermost section has broken away and is now lost. Archaeological excavation at the site recovered sheets of gilt copper, both plain and pierced with floral motifs, along with a bronze Chatra (shaft of a tiered umbrella). This suggests that the entire spire above the body was once sheathed in gilt copper sheeting.</p>
+            <h3>The Upper Part</h3>
+            <p style="text-indent: 0; margin: 0;">Consists of circular-plan stepped plinths in three receding tiers, supporting the bell-shaped body and a square throne. Excavations revealed two diamond-shaped pierced gilt copper sheeting (Thong Jang Ko), presumably used to cover the bell-shaped body. The spire features lotus-petal mouldings with hollow sockets for securing the umbrella shaft (Chatra). Additionally, a western boundary wall extending over 43 metres suggests the former presence of surrounding structures within the precinct.</p>
         </div>
     </div>
 
-    <!-- Architecture Gallery -->
+    <!-- Architecture Gallery (Board 1 Order) -->
     <div class="image-gallery">
-        <div class="img-card" onclick="openLightbox('image/altar-east-platform.jpg', 'The Eastern Altar Platform')">
-            <div class="img-wrapper"><img src="image/altar-east-platform.jpg" alt="Eastern Altar Platform"></div>
-            <div class="caption">The Eastern Altar Platform</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_2.jpg', 'Chedi Wat San Nhong After Archaeological Excavation')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_2.jpg" alt="Chedi Wat San Nhong After Excavation"></div>
+            <div class="caption">Chedi Wat San Nhong After Archaeological Excavation</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/stucco-peacock.jpg', 'Peacock & Floral Stucco Motif')">
-            <div class="img-wrapper"><img src="image/stucco-peacock.jpg" alt="Peacock Stucco Motif"></div>
-            <div class="caption">Peacock & Floral Stucco Motif</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_5.jpg', 'Overview of Chedi Wat San Nhong')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_5.jpg" alt="Overview of Chedi Wat San Nhong"></div>
+            <div class="caption">Overview of Chedi Wat San Nhong</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/stucco-qilin-singha.jpg', 'Mythical Creatures (Qilin / Singha)')">
-            <div class="img-wrapper"><img src="image/stucco-qilin-singha.jpg" alt="Singha & Qilin Stucco"></div>
-            <div class="caption">Mythical Creatures (Qilin / Singha)</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_6.jpg', 'Base Structure of Chedi Wat San Nhong')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_6.jpg" alt="Base Structure"></div>
+            <div class="caption">Base Structure of Chedi Wat San Nhong</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/stucco-body-frame.jpg', 'Cloud-like Stucco Niche Frames')">
-            <div class="img-wrapper"><img src="image/stucco-body-frame.jpg" alt="Relic Chamber Stucco"></div>
-            <div class="caption">Cloud-like Stucco Niche Frames</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_4.jpg', 'Relic Chamber Structure')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_4.jpg" alt="Relic Chamber Structure"></div>
+            <div class="caption">Relic Chamber Structure</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_3.jpg', 'Spire and Upper Part')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_3.jpg" alt="Spire and Upper Part"></div>
+            <div class="caption">Spire and Upper Part</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_7.jpg', 'Architectural Fragments Discovered')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_7.jpg" alt="Architectural Fragments"></div>
+            <div class="caption">Architectural Fragments Discovered</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_8.jpg', 'Architectural Fragments Discovered')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_8.jpg" alt="Architectural Fragments"></div>
+            <div class="caption">Architectural Fragments Discovered</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_9.jpg', 'Circumambulatory Terrace and Brick Paving')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_9.jpg" alt="Brick Paving"></div>
+            <div class="caption">Circumambulatory Terrace & Brick Paving</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_1.jpg', 'Western Boundary Wall Brick Foundation')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_1.jpg" alt="Boundary Wall"></div>
+            <div class="caption">Western Boundary Wall Brick Foundation</div>
         </div>
     </div>
 
-    <!-- Artifacts Section -->
-    <div class="section-badge">Artistry & Archaeological Artifacts</div>
-    <p style="color: #c4c8c2;">Excavations revealed various architectural ornaments, such as gilt copper sheeting pierced with floral patterns, bronze umbrella shafts, Ming dynasty Chinese blue-and-white porcelain (15th–17th centuries CE), earthenware, cowrie shells, and inscribed bricks with Fak Kham script.</p>
-
+    <!-- Archaeological Excavation Work (Board 2 Order) -->
+    <div class="section-badge">Archaeological Excavation Work</div>
     <div class="image-gallery">
-        <div class="img-card" onclick="openLightbox('image/artifact-gilt-copper-pattern.jpg', 'Pierced Gilt Copper Sheeting')">
-            <div class="img-wrapper"><img src="image/artifact-gilt-copper-pattern.jpg" alt="Pierced Gilt Copper Sheeting"></div>
-            <div class="caption">Pierced Gilt Copper Sheeting</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_24.jpg', 'Archaeological Excavation Process')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_24.jpg" alt="Archaeological Excavation"></div>
+            <div class="caption">Archaeological Excavation Process</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/artifact-gilt-bronze-crown.jpg', 'Spire Gilt Copper Fragment')">
-            <div class="img-wrapper"><img src="image/artifact-gilt-bronze-crown.jpg" alt="Gilt Ornament Fragment"></div>
-            <div class="caption">Spire Gilt Copper Fragment</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_1.jpg', 'Archaeological Excavation Process')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_1.jpg" alt="Archaeological Excavation"></div>
+            <div class="caption">Archaeological Excavation Process</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/artifact-blue-white-vase.jpg', 'Chinese Blue-and-White Porcelain')">
-            <div class="img-wrapper"><img src="image/artifact-blue-white-vase.jpg" alt="Blue and White Chinese Porcelain"></div>
-            <div class="caption">Chinese Blue-and-White Porcelain</div>
-        </div>
-        <div class="img-card" onclick="openLightbox('image/artifact-inscribed-brick.jpg', 'Brick Inscribed with Fak Kham Script')">
-            <div class="img-wrapper"><img src="image/artifact-inscribed-brick.jpg" alt="Inscribed Brick"></div>
-            <div class="caption">Brick Inscribed with Fak Kham Script</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_2.jpg', 'Archaeological Excavation Process')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_2.jpg" alt="Archaeological Excavation"></div>
+            <div class="caption">Archaeological Excavation Process</div>
         </div>
     </div>
 
-    <!-- Archaeology Work Section -->
-    <div class="section-badge">Archaeological Work</div>
+    <!-- Artistic Features & Gilt Copper -->
+    <div class="section-badge">Artistic Features of Chedi Wat San Nhong</div>
+    <p style="color: #c4c8c2;"><strong>Chedi Ornaments & Gilt Copper Sheeting (Thong Jang Ko):</strong> Metal architectural ornaments used to sheath the upper structures including the bell body and spire. Stucco fragments were also recovered, believed to have originally adorned the niche frames on the relic chamber.</p>
+
     <div class="image-gallery">
-        <div class="img-card" onclick="openLightbox('image/excavation-work-1.jpg', 'Excavation & Conservation Site')">
-            <div class="img-wrapper"><img src="image/excavation-work-1.jpg" alt="Excavation Work"></div>
-            <div class="caption">Excavation & Conservation Site</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_21.jpg', 'Diamond-shaped Pierced Gilt Copper Sheeting')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_21.jpg" alt="Diamond Gilt Copper Sheeting"></div>
+            <div class="caption">Diamond-shaped Pierced Gilt Copper Sheeting</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/excavation-work-3.jpg', 'Reinforcement of Brick Layers')">
-            <div class="img-wrapper"><img src="image/excavation-work-3.jpg" alt="Restoration Work"></div>
-            <div class="caption">Reinforcement of Brick Layers</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_22.jpg', 'Pierced Floral Pattern Gilt Metal Fragment')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_22.jpg" alt="Gilt Metal Fragment"></div>
+            <div class="caption">Pierced Floral Pattern Gilt Metal Fragment</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/archaeology-human-remains.jpg', 'Human Remains Found in Pit 1')">
-            <div class="img-wrapper"><img src="image/archaeology-human-remains.jpg" alt="Human Remains"></div>
-            <div class="caption">Human Remains Found in Pit 1</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_7.jpg', 'Bodhi-leaf Shaped Gilt Copper Sheeting')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_7.jpg" alt="Bodhi-leaf Gilt Copper"></div>
+            <div class="caption">Bodhi-leaf Shaped Gilt Copper Sheeting</div>
+        </div>
+    </div>
+
+    <!-- Eastern Altar Platform -->
+    <p style="color: #c4c8c2; margin-top: 30px;"><strong>The Eastern Altar Platform:</strong> Significantly larger than altars on other sides, featuring exquisite stucco reliefs depicting floral scrolls and mythical hybrid creatures such as Qilins, Singhas (lions), and Hatsadiling birds.</p>
+
+    <div class="image-gallery">
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_20.jpg', 'Eastern Altar Platform Overview')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_20.jpg" alt="Eastern Altar Platform"></div>
+            <div class="caption">Eastern Altar Platform Overview</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_4.jpg', 'Altar Stucco Relief Details')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_4.jpg" alt="Stucco Relief Details"></div>
+            <div class="caption">Altar Stucco Relief Details</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_3.jpg', 'Floral Scroll Stucco Relief')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_3.jpg" alt="Floral Scroll Stucco"></div>
+            <div class="caption">Floral Scroll Stucco Relief</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_18.jpg', 'Mythical Creatures Stucco Relief (Singha & Qilin)')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_18.jpg" alt="Mythical Creatures Stucco"></div>
+            <div class="caption">Mythical Creatures Stucco (Singha & Qilin)</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_19.jpg', 'Qilin Stucco Motif with Cloud Scrollwork')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_19.jpg" alt="Qilin Stucco Motif"></div>
+            <div class="caption">Qilin Stucco Motif with Cloud Scrollwork</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_17.jpg', 'Peacock Stucco Relief')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_17.jpg" alt="Peacock Stucco Relief"></div>
+            <div class="caption">Peacock Stucco Relief</div>
+        </div>
+    </div>
+
+    <!-- Discovered Artifacts -->
+    <div class="section-badge">Archaeological Artifacts Discovered</div>
+
+    <div class="image-gallery">
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_14.jpg', 'Ming Dynasty Chinese Blue-and-White Porcelain (15th–17th Century CE)')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_14.jpg" alt="Chinese Porcelain"></div>
+            <div class="caption">Ming Dynasty Chinese Blue-and-White Porcelain</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_12.jpg', 'Chinese Blue-and-White Porcelain Base with Inscription')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_12.jpg" alt="Porcelain Base Inscription"></div>
+            <div class="caption">Porcelain Base with Chinese Inscription</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_9.jpg', 'Blue-and-White Porcelain Shards')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_9.jpg" alt="Porcelain Shards"></div>
+            <div class="caption">Blue-and-White Porcelain Shards</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_15.jpg', 'Green-glazed Celadon Jarlet (Sankhalok Ware)')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_15.jpg" alt="Celadon Jarlet"></div>
+            <div class="caption">Green-glazed Celadon Jarlet</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_11.jpg', 'Inscribed Brick with Fak Kham Script')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_11.jpg" alt="Inscribed Brick"></div>
+            <div class="caption">Inscribed Brick with Fak Kham Script</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_13.jpg', 'Votive Objects Found Inside Reliquary Jar')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_13.jpg" alt="Votive Objects"></div>
+            <div class="caption">Votive Objects Found Inside Reliquary Jar</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_16.jpg', 'Relic Fragments')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_16.jpg" alt="Relic Fragments"></div>
+            <div class="caption">Relic Fragments</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_8.jpg', 'Bronze Bell Fragment')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_8.jpg" alt="Bronze Bell Fragment"></div>
+            <div class="caption">Bronze Bell Fragment</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_6.jpg', 'Cowrie Shells')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_6.jpg" alt="Cowrie Shells"></div>
+            <div class="caption">Cowrie Shells</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_10.jpg', 'Earthenware Vessel (Kaprakan Pottery Line)')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_10.jpg" alt="Earthenware Vessel"></div>
+            <div class="caption">Earthenware Vessel (Kaprakan Line)</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_5.jpg', 'Large Brown-glazed Pewter Jar')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_5.jpg" alt="Brown-glazed Jar"></div>
+            <div class="caption">Large Brown-glazed Pewter Jar</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_23.jpg', 'Human Skeleton Found in Pit No. 1')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_23.jpg" alt="Human Skeleton"></div>
+            <div class="caption">Human Skeleton Found in Pit No. 1</div>
         </div>
     </div>
 

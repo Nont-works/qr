@@ -14,9 +14,9 @@
         }
 
         :root {
-            --bg-color: #0f1410; /* โทนเข้มหรูหราแบบพิพิธภัณฑ์ */
+            --bg-color: #0f1410;
             --card-bg: #1a221b;
-            --primary-accent: #c4a468; /* สีทองโบราณ */
+            --primary-accent: #c4a468;
             --text-main: #e6e8e5;
             --text-muted: #a3ab9e;
             --header-bg: #0a0d0a;
@@ -37,7 +37,7 @@
         header {
             position: relative;
             background: linear-gradient(180deg, rgba(15,20,16,0.6) 0%, rgba(15,20,16,1) 100%),
-            url('image/chedi-overview-full.jpg') center/cover no-repeat;
+            url('image/LINE_ALBUM_ป้าย%201_260814_2.jpg') center/cover no-repeat;
             padding: 120px 20px 60px;
             text-align: center;
             border-bottom: 2px solid var(--primary-accent);
@@ -50,6 +50,7 @@
             color: #fff;
             text-shadow: 0 4px 15px rgba(0,0,0,0.8);
             letter-spacing: 2px;
+            text-align: center;
         }
 
         header p {
@@ -61,9 +62,10 @@
             font-size: 1.25em;
             font-weight: 500;
             letter-spacing: 1px;
+            display: block;
+            width: 100%;
         }
 
-        /* ปุ่มสลับภาษาแบบ Floating Glassmorphism */
         .lang-switch {
             position: absolute;
             top: 20px;
@@ -106,7 +108,33 @@
             margin-bottom: 50px;
         }
 
-        /* Section Title แบบป้ายทองหรู */
+        .history-timeline {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .history-timeline ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .history-timeline li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: #d1d6ce;
+        }
+        .history-timeline li::before {
+            content: '•';
+            color: var(--primary-accent);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
         .section-badge {
             display: flex;
             align-items: center;
@@ -123,7 +151,6 @@
             background: linear-gradient(90deg, var(--primary-accent), transparent);
         }
 
-        /* Timeline Card สำหรับโครงสร้าง */
         .structure-timeline {
             display: flex;
             flex-direction: column;
@@ -148,7 +175,6 @@
             font-size: 1.25em;
         }
 
-        /* Image Grid Modern Cards */
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -184,7 +210,7 @@
         }
 
         .img-card:hover img {
-            transform: scale(1.08); /* เอฟเฟกต์ซูมรูป */
+            transform: scale(1.08);
         }
 
         .img-card .caption {
@@ -194,7 +220,6 @@
             color: var(--text-muted);
         }
 
-        /* Lightbox Modal โหมดดูรูปใหญ่ */
         .lightbox {
             display: none;
             position: fixed;
@@ -249,85 +274,201 @@
 <div class="container">
     <!-- บทนำ -->
     <div class="intro-text">
-        <p style="text-indent: 0; margin-top: 0;">โบราณสถานเจดีย์วัดสันหนอง ตั้งอยู่ทางด้านทิศใต้ของ “ทุ่งเจดีย์” ซึ่งเป็นอาณาบริเวณของเมืองฮอดเก่า ตั้งอยู่ในเขตตำบลฮอด อำเภอฮอด จังหวัดเชียงใหม่ โดยหันหน้าไปทางทิศตะวันออกเข้าสู่แม่น้ำปิง ไม่ปรากฏประวัติการก่อสร้างที่แน่ชัด แต่จากรูปแบบศิลปกรรมและหลักฐานทางโบราณคดีที่พบกำหนดอายุได้ในช่วงราวพุทธศตวรรษที่ ๒๐-๒๒</p>
-        <p style="text-indent: 0; margin-bottom: 0;">เจดีย์วัดสันหนอง มีลักษณะเป็นเจดีย์ทรงระฆัง ศิลปะล้านนา ในผังสี่เหลี่ยมจัตุรัส ความกว้าง ๑๐.๒ x ๑๐.๒ เมตร ทำฐานยกสูงจากพื้นประมาณ ๓๐ เซนติเมตร เพื่อเชื่อมวิหาร เจดีย์ประธานเป็นฐานเดียวกัน เพื่อใช้เป็นลานประทักษิณ ด้านทิศตะวันตกสร้างต่อเนื่องจนจรดติดกับแนวกำแพงแก้วของวัด</p>
+        <p style="text-indent: 0; margin-top: 0;">เจดีย์วัดสันหนอง ตั้งอยู่ในเขตพื้นที่ตำบลฮอด อำเภอฮอด จังหวัดเชียงใหม่ ตำแหน่งพิกัด UTM ๔๗Q ๔๕๔๔๐ E, ๒๐๐๐๔๗๗ N ความสูงจากระดับน้ำทะเลปานกลาง ๒๔๐ เมตร เป็นโบราณสถานที่ตั้งอยู่บนเนินลานตะพักน้ำริมแม่น้ำปิงฝั่งทิศตะวันตก และเป็นเจดีย์ที่ตั้งอยู่ทิศใต้สุดของกลุ่มโบราณสถาน "ทุ่งเจดีย์"</p>
     </div>
 
-    <!-- โครงสร้างเจดีย์แบบ Timeline -->
+    <!-- ประวัติการดำเนินงาน -->
+    <div class="section-badge">การดำเนินงานที่ผ่านมา</div>
+    <div class="history-timeline">
+        <ul>
+            <li><strong>ปี พ.ศ. ๒๕๐๓ :</strong> การดำเนินงานขุดค้นและขุดแต่งแหล่งโบราณคดีในพื้นที่ได้รับผลกระทบจากการสร้างเขื่อน โดยกรมศิลปากร</li>
+            <li><strong>ปี พ.ศ. ๒๕๑๑ :</strong> การสำรวจทางโบราณคดีในพื้นที่เมืองฮอด โดยสำนักศิลปากรที่ ๗ เชียงใหม่ และคณะโบราณคดี มหาวิทยาลัยศิลปากร</li>
+            <li><strong>ปี พ.ศ. ๒๕๓๓ :</strong> โครงการขุดค้นขุดแต่งทางโบราณคดีโบราณสถานวัดสันหนอง (ร้าง) โดยสำนักศิลปากรที่ ๗ เชียงใหม่</li>
+            <li><strong>ปี พ.ศ. ๒๕๖๔-๒๕๖๙ :</strong> โครงการอนุรักษ์และพัฒนาเจดีย์วัดสันหนอง โดยสำนักศิลปากรที่ ๗ เชียงใหม่</li>
+        </ul>
+    </div>
+
+    <!-- โครงสร้างเจดีย์ -->
     <div class="section-badge">ลักษณะโครงสร้างของเจดีย์</div>
+    <p style="color: #c4c8c2;">เจดีย์วัดสันหนอง มีลักษณะเป็นเจดีย์ทรงระฆังแบบศิลปะล้านนา เป็นเจดีย์ในผังสี่เหลี่ยมจัตุรัส กว้าง ๑๐.๒ เมตร สร้างบนฐานโพธิ์ยกสูงจากพื้น ปูพื้นอิฐรอบเจดีย์เพื่อใช้เป็นลานประทักษิณและมีบันไดทางด้านทิศตะวันออกเฉียงใต้ของเจดีย์</p>
 
     <div class="structure-timeline">
         <div class="timeline-card">
-            <h3>1. ส่วนฐานเจดีย์</h3>
-            <p style="text-indent: 0; margin: 0;">ชั้นล่างสุดเป็นฐานเขียงในผังสี่เหลี่ยมจัตุรัส แต่ละมุมประดับเสาหัวบัว ฐานเขียงทุกด้านพบว่ามีแท่นบูชา เป็นชุดฐานบัว ประดับลูกแก้วอกไก่ แท่นบูชาด้านทิศตะวันออก มีขนาดใหญ่ที่สุด และแยกส่วนกับฐานเขียง แตกต่างจากอีก ๓ ด้าน และปรากฏการประดับงานปูนปั้นที่มีความละเอียดสวยงาม ทั้งลวดลายพรรณพฤกษา และสัตว์ชนิดต่างๆ นกยูง สิงห์ กิเลน และช้าง จากนั้นขึ้นไปเป็นฐานเขียงย่อมุม ซ้อนลดหลั่นกัน ๓ ชั้น</p>
+            <h3>ส่วนฐาน</h3>
+            <p style="text-indent: 0; margin: 0;">ชั้นล่างสุดเป็นฐานเขียงในผังสี่เหลี่ยมย่อมุม ปรากฏแท่นบูชาทุกด้านและมุมของฐานประดับเสาหัวบัว จากนั้นรองรับชุดฐานเขียงย่อมุม ๓ ชั้น</p>
         </div>
         <div class="timeline-card">
-            <h3>2. ส่วนเรือนธาตุ</h3>
-            <p style="text-indent: 0; margin: 0;">อยู่ในผังสี่เหลี่ยมย่อมุม ความกว้าง ๖.๕ เมตร ประดับลูกแก้วอกไก่ ปรากฏลวดลายปูนปั้นลักษณะเป็นกรอบช่องกระจก ลวดลายหยักคล้ายเมฆ</p>
+            <h3>ส่วนเรือนธาตุ</h3>
+            <p style="text-indent: 0; margin: 0;">เป็นเรือนธาตุขนาดใหญ่ ในผังสี่เหลี่ยมย่อมุม ความกว้าง ๖.๔ เมตร ประดับลูกแก้วอกไก่ ปรากฏลวดลายปูนปั้นในช่องย่อมุม เป็นลายกรอบ มีรอยหยักคล้ายเมฆ</p>
         </div>
         <div class="timeline-card">
-            <h3>3. ส่วนยอดเจดีย์</h3>
-            <p style="text-indent: 0; margin: 0;">ประกอบด้วยฐานเขียงในผังวงกลม ซ้อนลดหลั่นกัน ๓ ชั้น รองรับองค์ระฆังและบัลลังก์ในผังสี่เหลี่ยม ส่วนยอดที่เหลือหักหายไป จากการขุดแต่งทางโบราณคดีพบแผ่นทองจังโก ทั้งที่มีการฉลุลวดลายพรรณพฤกษา และที่ไม่ฉลุลวดลาย และแกนฉัตรสำริด สันนิษฐานว่า ส่วนยอดของเจดีย์เหนือส่วนเรือนธาตุขึ้นไป ได้รับการประดับพื้นผิวด้วยแผ่นทองจังโกทั้งหมด</p>
+            <h3>ส่วนยอด</h3>
+            <p style="text-indent: 0; margin: 0;">เป็นส่วนฐานเขียงผังวงกลม ซ้อนลดหลั่นกัน ๓ ชั้น มีการประดับลูกแก้วอกไก่ เพื่อรองรับองค์ระฆัง จากการขุดแต่งทางโบราณคดี พบแผ่นทองจังโกสี่เหลี่ยมขนมเปียกปูน ฉลุลวดลาย จำนวน ๒ ชิ้น สันนิษฐานว่าเป็นส่วนที่ใช้ประดับองค์ระฆัง ส่วนบนสุดของเจดีย์ ปรากฏการสร้างบัลลังก์ในผังสี่เหลี่ยม จากนั้นเป็นชั้นบัวถลา และปล้องไฉน ทำลวดลายกลีบบัว ด้านในมีการเจาะช่องเพื่อใช้สามแกะยอดฉัตร นอกจากนี้ยังปรากฏแนวกำแพงแก้วด้านทิศตะวันตกมีความยาวกว่า ๔๓ เมตร สันนิษฐานได้ว่าอาจมีอาคารหรือโครงสร้างอื่นๆ ในขอบเขตกำแพงแก้วนี้ด้วยเช่นกัน</p>
         </div>
     </div>
 
-    <!-- แกลเลอรีสถาปัตยกรรม -->
+    <!-- แกลเลอรีสถาปัตยกรรม (เรียงตามป้ายแผ่นที่ 1) -->
     <div class="image-gallery">
-        <div class="img-card" onclick="openLightbox('image/altar-east-platform.jpg', 'แท่นบูชาด้านทิศตะวันออก')">
-            <div class="img-wrapper"><img src="image/altar-east-platform.jpg" alt="แท่นบูชาทิศตะวันออก"></div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_2.jpg', 'เจดีย์วัดสันหนอง หลังงานขุดแต่งทางโบราณคดี')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_2.jpg" alt="เจดีย์วัดสันหนอง หลังงานขุดแต่งทางโบราณคดี"></div>
+            <div class="caption">เจดีย์วัดสันหนอง หลังงานขุดแต่งทางโบราณคดี</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_5.jpg', 'ภาพรวมองค์เจดีย์วัดสันหนอง')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_5.jpg" alt="ภาพรวมองค์เจดีย์วัดสันหนอง"></div>
+            <div class="caption">ภาพรวมองค์เจดีย์วัดสันหนอง</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_6.jpg', 'ส่วนฐานเจดีย์วัดสันหนอง')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_6.jpg" alt="ส่วนฐานเจดีย์วัดสันหนอง"></div>
+            <div class="caption">ส่วนฐานเจดีย์วัดสันหนอง</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_4.jpg', 'ส่วนเรือนธาตุเจดีย์วัดสันหนอง')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_4.jpg" alt="ส่วนเรือนธาตุเจดีย์วัดสันหนอง"></div>
+            <div class="caption">ส่วนเรือนธาตุเจดีย์วัดสันหนอง</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_3.jpg', 'ส่วนยอดเจดีย์วัดสันหนอง')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_3.jpg" alt="ส่วนยอดเจดีย์วัดสันหนอง"></div>
+            <div class="caption">ส่วนยอดเจดีย์วัดสันหนอง</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_7.jpg', 'ชิ้นส่วนสถาปัตยกรรมที่พบจากการขุดแต่งทางโบราณคดี')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_7.jpg" alt="ชิ้นส่วนสถาปัตยกรรม"></div>
+            <div class="caption">ชิ้นส่วนสถาปัตยกรรมที่พบจากการขุดแต่งทางโบราณคดี</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_8.jpg', 'ชิ้นส่วนสถาปัตยกรรมที่พบจากการขุดแต่งทางโบราณคดี')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_8.jpg" alt="ชิ้นส่วนสถาปัตยกรรม"></div>
+            <div class="caption">ชิ้นส่วนสถาปัตยกรรมที่พบจากการขุดแต่งทางโบราณคดี</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_9.jpg', 'ลานประทักษิณและแนวอิฐรอบองค์เจดีย์')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_9.jpg" alt="ลานประทักษิณ"></div>
+            <div class="caption">ลานประทักษิณและแนวอิฐรอบองค์เจดีย์</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%201_260814_1.jpg', 'แนวอิฐแนวกำแพงแก้วทางทิศตะวันตก')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%201_260814_1.jpg" alt="แนวอิฐแนวกำแพงแก้วทางทิศตะวันตก"></div>
+            <div class="caption">แนวอิฐแนวกำแพงแก้วทางทิศตะวันตก</div>
+        </div>
+    </div>
+
+    <!-- ข้อมูลยุคสมัย -->
+    <p style="color: #d1d6ce; background: var(--card-bg); padding: 20px; border-radius: 8px;">
+        เจดีย์วัดสันหนอง กำหนดอายุจากรูปแบบทางสถาปัตยกรรม ศิลปกรรมและหลักฐานทางโบราณคดี ราวพุทธศตวรรษที่ ๒๐-๒๒ เป็นเจดีย์ที่มีอิทธิพลในศิลปะแบบล้านนา และมีการผสมผสานศิลปะสุโขทัย จากการปรากฏเสาหัวบัวและบัลลังก์ในผังสี่เหลี่ยม สะท้อนให้เห็นถึงการปฏิสัมพันธ์ของสองวัฒนธรรมและความสำคัญของเมืองฮอด ในฐานะเมืองหน้าด่านการค้าที่สำคัญของอาณาจักรล้านนากับอาณาจักรอื่นๆ ภายนอก
+    </p>
+
+    <!-- การดำเนินงานขุดแต่งทางโบราณคดี (เรียงตามป้ายแผ่นที่ 2) -->
+    <div class="section-badge">การดำเนินงานขุดค้นขุดแต่งทางโบราณคดี</div>
+    <div class="image-gallery">
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_24.jpg', 'การดำเนินงานขุดแต่งทางโบราณคดี')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_24.jpg" alt="การดำเนินงานขุดแต่งทางโบราณคดี"></div>
+            <div class="caption">การดำเนินงานขุดแต่งทางโบราณคดี</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_1.jpg', 'การดำเนินงานขุดแต่งทางโบราณคดี')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_1.jpg" alt="การดำเนินงานขุดแต่งทางโบราณคดี"></div>
+            <div class="caption">การดำเนินงานขุดแต่งทางโบราณคดี</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_2.jpg', 'การดำเนินงานขุดแต่งทางโบราณคดี')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_2.jpg" alt="การดำเนินงานขุดแต่งทางโบราณคดี"></div>
+            <div class="caption">การดำเนินงานขุดแต่งทางโบราณคดี</div>
+        </div>
+    </div>
+
+    <!-- งานศิลปกรรมและแผ่นทองจังโก -->
+    <div class="section-badge">งานศิลปกรรมที่ปรากฏในเจดีย์วัดสันหนอง</div>
+    <p style="color: #c4c8c2;"><strong>เครื่องประดับเจดีย์ จำพวกโลหะหรือแผ่นทองจังโก</strong> ใช้ประดับส่วนเครื่องบนของเจดีย์ ได้แก่ องค์เจดีย์ และส่วนยอด นอกเหนือจากนี้ยังพบลายปูนปั้นที่สันนิษฐานว่า อาจเป็นส่วนที่เคยประดับอยู่บริเวณส่วนเรือนธาตุภายในช่องกระจก</p>
+
+    <div class="image-gallery">
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_21.jpg', 'เครื่องประดับเจดีย์ จำพวกโลหะหรือแผ่นทองจังโก')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_21.jpg" alt="เครื่องประดับเจดีย์ จำพวกโลหะหรือแผ่นทองจังโก"></div>
+            <div class="caption">แผ่นทองจังโกสี่เหลี่ยมขนมเปียกปูนฉลุลาย</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_22.jpg', 'เครื่องประดับเจดีย์ จำพวกโลหะหรือแผ่นทองจังโก')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_22.jpg" alt="เครื่องประดับเจดีย์ จำพวกโลหะหรือแผ่นทองจังโก"></div>
+            <div class="caption">ชิ้นส่วนทองจังโกฉลุลวดลายพรรณพฤกษา</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_7.jpg', 'เครื่องประดับเจดีย์ จำพวกโลหะหรือแผ่นทองจังโก')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_7.jpg" alt="เครื่องประดับเจดีย์ จำพวกโลหะหรือแผ่นทองจังโก"></div>
+            <div class="caption">แผ่นทองจังโกรูปใบโพธิ์</div>
+        </div>
+    </div>
+
+    <!-- แท่นบูชาทิศตะวันออก -->
+    <p style="color: #c4c8c2; margin-top: 30px;"><strong>แท่นบูชาด้านทิศตะวันออก</strong> เป็นแท่นที่มีขนาดใหญ่กว่าแท่นบูชาด้านอื่นๆ มีการประดับลวดลายปูนปั้นที่มีความประณีตสวยงาม ประกอบด้วยลายพรรณพฤกษา ลายสัตว์มงคล ได้แก่ กิเลน สิงห์ นกหัสดีลิงค์ เป็นต้น</p>
+
+    <div class="image-gallery">
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_20.jpg', 'แท่นบูชาด้านทิศตะวันออก')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_20.jpg" alt="แท่นบูชาด้านทิศตะวันออก"></div>
             <div class="caption">แท่นบูชาด้านทิศตะวันออก</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/stucco-peacock.jpg', 'ปูนปั้นลายนกยูงประดับแท่นบูชา')">
-            <div class="img-wrapper"><img src="image/stucco-peacock.jpg" alt="ปูนปั้นลายนกยูง"></div>
-            <div class="caption">ปูนปั้นลายนกยูงประดับแท่นบูชา</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_4.jpg', 'ลวดลายปูนปั้นประดับแท่นบูชา')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_4.jpg" alt="ลวดลายปูนปั้นประดับแท่นบูชา"></div>
+            <div class="caption">ลวดลายปูนปั้นประดับแท่นบูชา</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/stucco-qilin-singha.jpg', 'ปูนปั้นลายสัตว์มงคล (กิเลน/สิงห์)')">
-            <div class="img-wrapper"><img src="image/stucco-qilin-singha.jpg" alt="ปูนปั้นลายสิงห์และกิเลน"></div>
-            <div class="caption">ปูนปั้นลายสัตว์มงคล (กิเลน/สิงห์)</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_3.jpg', 'ลวดลายปูนปั้นก้านขด')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_3.jpg" alt="ลวดลายปูนปั้นก้านขด"></div>
+            <div class="caption">ลวดลายปูนปั้นก้านขด</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/stucco-body-frame.jpg', 'ลวดลายปูนปั้นกรอบช่องกระจกเรือนธาตุ')">
-            <div class="img-wrapper"><img src="image/stucco-body-frame.jpg" alt="ปูนปั้นเรือนธาตุ"></div>
-            <div class="caption">ลวดลายปูนปั้นกรอบช่องกระจก</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_18.jpg', 'ลวดลายปูนปั้นสัตว์มงคล (สิงห์/กิเลน)')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_18.jpg" alt="ลวดลายปูนปั้นสัตว์มงคล"></div>
+            <div class="caption">ลวดลายปูนปั้นสัตว์มงคล (สิงห์/กิเลน)</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_19.jpg', 'ลวดลายปูนปั้นสัตว์มงคลประดับลายเมฆ')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_19.jpg" alt="ลวดลายปูนปั้นสัตว์มงคลประดับลายเมฆ"></div>
+            <div class="caption">ลวดลายปูนปั้นสัตว์มงคลประดับลายเมฆ</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_17.jpg', 'ลวดลายปูนปั้นนกยูง')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_17.jpg" alt="ลวดลายปูนปั้นนกยูง"></div>
+            <div class="caption">ลวดลายปูนปั้นนกยูง</div>
         </div>
     </div>
 
-    <!-- โบราณวัตถุที่พบ -->
-    <div class="section-badge">งานศิลปกรรมและโบราณวัตถุที่พบ</div>
-    <p style="color: #c4c8c2;">จากการขุดแต่งทางโบราณคดี ได้พบเครื่องประดับเจดีย์ เช่น แผ่นทองจังโกฉลุลวดลายพรรณพฤกษา แกนฉัตรสำริด ตลอดจนเครื่องถ้วยชามจีนสมัยราชวงศ์หมิง (พุทธศตวรรษที่ ๒๐-๒๒) ภาชนะดินเผา หอยเบี้ย และอิฐสลักตัวอักษรฝักขาม</p>
+    <!-- โบราณวัตถุที่พบจากการดำเนินงาน (ตรงตาม Caption ล่างสุดของป้าย 2) -->
+    <div class="section-badge">โบราณวัตถุที่พบจากการดำเนินงาน</div>
 
     <div class="image-gallery">
-        <div class="img-card" onclick="openLightbox('image/artifact-gilt-copper-pattern.jpg', 'แผ่นทองจังโกฉลุลวดลายพรรณพฤกษา')">
-            <div class="img-wrapper"><img src="image/artifact-gilt-copper-pattern.jpg" alt="แผ่นทองจังโกฉลุลาย"></div>
-            <div class="caption">แผ่นทองจังโกฉลุลวดลายพรรณพฤกษา</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_14.jpg', 'เครื่องถ้วยลายเขียนสีน้ำเงิน ศิลปะจีน สมัยราชวงศ์หมิง พุทธศตวรรษที่ ๒๐-๒๒')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_14.jpg" alt="เครื่องถ้วยลายเขียนสีน้ำเงิน"></div>
+            <div class="caption">เครื่องถ้วยลายเขียนสีน้ำเงิน ศิลปะจีน สมัยราชวงศ์หมิง พุทธศตวรรษที่ ๒๐-๒๒</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/artifact-gilt-bronze-crown.jpg', 'ชิ้นส่วนทองจังโกประดับส่วนยอด')">
-            <div class="img-wrapper"><img src="image/artifact-gilt-bronze-crown.jpg" alt="ชิ้นส่วนแผ่นทองจังโกประดับยอด"></div>
-            <div class="caption">ชิ้นส่วนทองจังโกประดับส่วนยอด</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_12.jpg', 'ชิ้นส่วนเครื่องถ้วยลายเขียนสีน้ำเงิน ศิลปะจีน (ก้นชามจารึกอักษรจีน)')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_12.jpg" alt="ก้นชามจารึกอักษรจีน"></div>
+            <div class="caption">ก้นชามเครื่องถ้วยจีนจารึกอักษรจีน</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/artifact-blue-white-vase.jpg', 'เครื่องถ้วยลายเขียนสีน้ำเงิน ศิลปะจีน')">
-            <div class="img-wrapper"><img src="image/artifact-blue-white-vase.jpg" alt="เครื่องถ้วยลายเขียนสีน้ำเงิน"></div>
-            <div class="caption">เครื่องถ้วยลายเขียนสีน้ำเงิน ศิลปะจีน</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_9.jpg', 'ชิ้นส่วนเครื่องถ้วยลายเขียนสีน้ำเงิน ศิลปะจีน')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_9.jpg" alt="ชิ้นส่วนเครื่องถ้วยลายเขียนสีน้ำเงิน"></div>
+            <div class="caption">ชิ้นส่วนเครื่องถ้วยลายเขียนสีน้ำเงิน ศิลปะจีน</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/artifact-inscribed-brick.jpg', 'จารึกบนอิฐสลัก ตัวอักษรฝักขาม')">
-            <div class="img-wrapper"><img src="image/artifact-inscribed-brick.jpg" alt="อิฐสลักตัวอักษรฝักขาม"></div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_15.jpg', 'กระปุก เคลือบสีเขียว แต่งเต๋าสังคโลก')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_15.jpg" alt="กระปุก เคลือบสีเขียว แต่งเต๋าสังคโลก"></div>
+            <div class="caption">กระปุก เคลือบสีเขียว แต่งเต๋าสังคโลก</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_11.jpg', 'จารึกบนอิฐสลัก ตัวอักษรฝักขาม')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_11.jpg" alt="จารึกบนอิฐสลัก ตัวอักษรฝักขาม"></div>
             <div class="caption">จารึกบนอิฐสลัก ตัวอักษรฝักขาม</div>
         </div>
-    </div>
-
-    <!-- การดำเนินงานทางโบราณคดี -->
-    <div class="section-badge">การดำเนินงานทางโบราณคดี</div>
-    <div class="image-gallery">
-        <div class="img-card" onclick="openLightbox('image/excavation-work-1.jpg', 'การขุดแต่งและอนุรักษ์เจดีย์วัดสันหนอง')">
-            <div class="img-wrapper"><img src="image/excavation-work-1.jpg" alt="การขุดแต่งโบราณสถาน"></div>
-            <div class="caption">การขุดแต่งและอนุรักษ์เจดีย์วัดสันหนอง</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_13.jpg', 'ของอธิษฐานบรรจุภายในโถลานสวาท')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_13.jpg" alt="ของอธิษฐานบรรจุภายในโถลานสวาท"></div>
+            <div class="caption">ของอธิษฐานบรรจุภายในโถลานสวาท</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/excavation-work-3.jpg', 'การเสริมความมั่นคงแนวอิฐเจดีย์')">
-            <div class="img-wrapper"><img src="image/excavation-work-3.jpg" alt="การบูรณะเจดีย์"></div>
-            <div class="caption">การเสริมความมั่นคงแนวอิฐเจดีย์</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_16.jpg', 'ชิ้นส่วนพระธาตุ')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_16.jpg" alt="ชิ้นส่วนพระธาตุ"></div>
+            <div class="caption">ชิ้นส่วนพระธาตุ</div>
         </div>
-        <div class="img-card" onclick="openLightbox('image/archaeology-human-remains.jpg', 'โครงกระดูกมนุษย์ที่พบในหลุมขุดแต่ง')">
-            <div class="img-wrapper"><img src="image/archaeology-human-remains.jpg" alt="โครงกระดูกมนุษย์"></div>
-            <div class="caption">โครงกระดูกมนุษย์ที่พบในหลุมขุดแต่ง</div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_8.jpg', 'ชิ้นส่วนกระดิ่งสำริด')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_8.jpg" alt="ชิ้นส่วนกระดิ่งสำริด"></div>
+            <div class="caption">ชิ้นส่วนกระดิ่งสำริด</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_6.jpg', 'หอยเบี้ย')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_6.jpg" alt="หอยเบี้ย"></div>
+            <div class="caption">หอยเบี้ย</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_10.jpg', 'ภาชนะดินเผา เนื้อดิน สายกะประกัน')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_10.jpg" alt="ภาชนะดินเผา เนื้อดิน สายกะประกัน"></div>
+            <div class="caption">ภาชนะดินเผา เนื้อดิน สายกะประกัน</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_5.jpg', 'ไหขนาดใหญ่ เนื้อชิน เคลือบสีน้ำตาล')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_5.jpg" alt="ไหขนาดใหญ่ เนื้อชิน เคลือบสีน้ำตาล"></div>
+            <div class="caption">ไหขนาดใหญ่ เนื้อชิน เคลือบสีน้ำตาล</div>
+        </div>
+        <div class="img-card" onclick="openLightbox('image/LINE_ALBUM_ป้าย%202_260814_23.jpg', 'โครงกระดูกมนุษย์ ที่พบในหลุมขุดแต่งหมายเลข ๑')">
+            <div class="img-wrapper"><img src="image/LINE_ALBUM_ป้าย%202_260814_23.jpg" alt="โครงกระดูกมนุษย์ ที่พบในหลุมขุดแต่งหมายเลข ๑"></div>
+            <div class="caption">โครงกระดูกมนุษย์ ที่พบในหลุมขุดแต่งหมายเลข ๑</div>
         </div>
     </div>
 
